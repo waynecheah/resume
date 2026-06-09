@@ -1,0 +1,14 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "resume",
+  "compatibility_date": "2024-05-12",
+  "assets": {
+    "directory": "./public"
+  },
+  "routes": [
+    {
+      "pattern": "cv.kokweng.net",
+      "custom_domain": true
+    }
+  ]
+}
