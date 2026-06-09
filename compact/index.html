@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wayne Cheah - Compact CV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+        font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+        color: #1a1a1a;
+        background: #e8e8e8;
+    }
+
+    .page {
+        width: 210mm;
+        min-height: 297mm;
+        margin: 20px auto;
+        background: linear-gradient(160deg, #d9dad7 0%, #f4f5f3 35%);
+        padding: 16mm 16mm;
+        position: relative;
+    }
+
+    /* HEADER */
+    .header {
+        display: grid;
+        grid-template-columns: 1.4fr 1fr;
+        gap: 20px;
+        margin-bottom: 18px;
+        align-items: stretch;
+    }
+
+    .name {
+        font-size: 95px;
+        font-weight: 500;
+        line-height: 1.05;
+        letter-spacing: -2.5px;
+        color: #111;
+    }
+
+    .summary {
+        font-size: 12px;
+        line-height: 1.6;
+        color: #333;
+        margin-top: 18px;
+        max-width: 92%;
+    }
+
+    .header-right {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        margin-top: 33px;
+    }
+
+    .contact-row {
+        display: flex;
+        gap: 18px;
+        font-size: 11px;
+        color: #222;
+        margin-bottom: 90px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+
+    .contact-row span {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+    }
+
+    .contact-row .ic {
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: #2b2b2b;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+
+    .contact-row .ic svg {
+        width: 11px;
+        height: 11px;
+        fill: #fff;
+    }
+
+    /* PHOTO — single 3:4 portrait */
+    .mosaic {
+        position: relative;
+        width: 94%;
+        aspect-ratio: 3 / 4;
+        background-image: url('profile.png');
+        background-size: cover;
+        background-position: center;
+        border-radius: 16px;
+        margin-top: -63px;
+    }
+
+    /* SECTION HEADINGS */
+    .section-head {
+        font-size: 40px;
+        font-weight: 300;
+        letter-spacing: -1px;
+        color: #111;
+        margin-top: 6px;
+        margin-bottom: 16px;
+    }
+
+    /* BODY GRID */
+    .body-grid {
+        display: grid;
+        grid-template-columns: 1.4fr 1fr;
+        gap: 60px;
+    }
+
+    /* EXPERIENCE */
+    .exp-item {
+        display: grid;
+        grid-template-columns: 95px 1fr;
+        gap: 14px;
+        margin-bottom: 20px;
+    }
+
+    .exp-meta {
+        font-size: 10.5px;
+        color: #555;
+        line-height: 1.4;
+    }
+
+    .exp-role {
+        font-size: 15px;
+        font-weight: 700;
+        color: #00A878;
+        margin-bottom: 5px;
+    }
+
+    .exp-desc {
+        font-size: 11px;
+        line-height: 1.55;
+        color: #333;
+    }
+
+    /* SKILLS */
+    .skills-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .pill {
+        padding: 7px 15px;
+        border-radius: 20px;
+        font-size: 11px;
+        border: 1.5px solid #00A878;
+        color: #00A878;
+    }
+
+    .pill.filled {
+        background: #00A878;
+        color: #fff;
+    }
+
+    /* FOOTER: EDU + PORTFOLIO */
+    .footer-grid {
+        display: grid;
+        grid-template-columns: 1.4fr 1fr;
+        gap: 0 60px;
+        margin-top: 30px;
+    }
+
+    .edu-item { margin-bottom: 12px; }
+    .edu-meta { font-size: 10.5px; color: #555; }
+    .edu-deg { font-size: 13px; font-weight: 600; color: #111; }
+
+    .portfolio-block {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+    }
+
+    .qr {
+        width: 95px;
+        height: 95px;
+        background: #fff;
+        border-radius: 6px;
+        overflow: hidden;
+    }
+
+    .qr-caption {
+        font-size: 11px;
+        color: #333;
+        line-height: 1.5;
+        max-width: 130px;
+    }
+
+    .references {
+        margin-top: 28px;
+        font-size: 10px;
+        color: #777;
+    }
+
+    @media print {
+        body { background: white; }
+        .page {
+            margin: 0;
+            width: 100%;
+            min-height: auto;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+    }
+</style>
+</head>
+<body>
+<div class="page">
+
+    <!-- HEADER -->
+    <div class="header">
+        <div class="header-left">
+            <div class="name">Wayne<br>Cheah</div>
+            <div class="summary">
+                Technical Lead with 20+ years across full-stack engineering, microservices architecture, and cloud-native delivery. Specialised in legacy system modernisation, event-driven design, and high-scale platform performance.
+            </div>
+        </div>
+        <div class="header-right">
+            <div class="contact-row" style="margin-top: 30px;">
+                <span><span class="ic"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></span>cheah@kokweng.net</span>
+                <span><span class="ic"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></span>012-651 8551</span>
+            </div>
+            <div class="mosaic"></div>
+        </div>
+    </div>
+
+    <!-- EXPERIENCE -->
+    <div style="margin-top: -120px;">
+        <div class="section-head">Experience</div>
+        <div class="body-grid">
+            <div>
+                <div class="exp-item">
+                    <div class="exp-meta">Lapasar Sdn Bhd<br>Nov 2021 – Present</div>
+                    <div>
+                        <div class="exp-role">Technical Lead</div>
+                        <div class="exp-desc">
+                            Lead architecture and full-stack direction of a B2B commerce platform serving 1,000+ daily users and RM1M+ daily transactions. Migrated legacy PHP monoliths to Node.js microservices (Nest.js, Hono) with event-driven NATS messaging and Redis caching — 50%+ faster APIs. Manage a 12-engineer team across AWS, GCP & Azure DevOps.
+                        </div>
+                    </div>
+                </div>
+                <div class="exp-item">
+                    <div class="exp-meta">SofaX Sdn Bhd<br>Apr 2021 – Oct 2021</div>
+                    <div>
+                        <div class="exp-role">Senior Web Developer</div>
+                        <div class="exp-desc">
+                            Built VR/e-commerce backend on Nest.js microservices. Integrated Stripe payments for a pioneering VR shopping platform. Deployed via AliCloud Kubernetes, Docker, Helm & ArgoCD GitOps.
+                        </div>
+                    </div>
+                </div>
+                <div class="exp-item">
+                    <div class="exp-meta">Symple Apps Sdn Bhd<br>Apr 2017 – Mar 2021</div>
+                    <div>
+                        <div class="exp-role">Technical Lead</div>
+                        <div class="exp-desc">
+                            Led a team of 7 delivering SaaS field-force management for Starbucks, MrDIY, FamilyMart, TGV & Poh Kong. Built microservices with GraphQL and Angular, deployed on GCP Kubernetes with full CI/CD and real-time performance tracking.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SKILLS -->
+            <div style="margin-top: 100px;">
+                <div class="section-head" style="font-size:40px;">Skills</div>
+                <div class="skills-wrap">
+                    <span class="pill filled">Node.js</span>
+                    <span class="pill">Nest.js</span>
+                    <span class="pill filled">React</span>
+                    <span class="pill">Vue 3</span>
+                    <span class="pill">TypeScript</span>
+                    <span class="pill filled">Microservices</span>
+                    <span class="pill">GraphQL</span>
+                    <span class="pill">MongoDB</span>
+                    <span class="pill filled">Redis</span>
+                    <span class="pill">AWS / GCP</span>
+                    <span class="pill">Docker</span>
+                    <span class="pill filled">Kubernetes</span>
+                    <span class="pill">CI/CD</span>
+                    <span class="pill">NATS / Kafka</span>
+                    <span class="pill filled">AI Tooling</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- EDUCATION + PORTFOLIO -->
+    <div class="footer-grid">
+        <div>
+            <div class="section-head">Education</div>
+            <div class="edu-item">
+                <div class="edu-deg">Diploma in Computing IT</div>
+                <div class="edu-meta">APIIT College · 2001</div>
+            </div>
+            <div class="edu-item">
+                <div class="edu-deg">Certificate in Computer Science</div>
+                <div class="edu-meta">Institute Astin · 1998</div>
+            </div>
+            <div class="edu-item">
+                <div class="edu-deg">MongoDB Certified Developer</div>
+                <div class="edu-meta">MongoDB University</div>
+            </div>
+        </div>
+        <div>
+            <div class="section-head">Portfolio</div>
+            <div class="portfolio-block">
+                <div class="qr">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=http://cv.kokweng.net" alt="Scan for full CV" style="width:100%;height:100%;border-radius:6px;">
+                </div>
+                <div class="qr-caption">Scan to view my full CV &amp; project history at cv.kokweng.net</div>
+            </div>
+        </div>
+        <div class="references">References available upon request</div>
+    </div>
+
+  </div>
+</body>
+</html>
