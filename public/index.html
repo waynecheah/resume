@@ -1,704 +1,481 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wayne Cheah - Technical Lead CV</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #2c3e50;
-            background: #f5f5f5;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background: white;
-            display: grid;
-            grid-template-columns: 280px 1fr;
-            min-height: 100vh;
-        }
-        
-        /* LEFT SIDEBAR */
-        .sidebar {
-            background: #E8F0ED;
-            color: #2d3748;
-            padding: 30px 20px;
-        }
-        
-        .profile-section {
-            text-align: center;
-            margin-bottom: 25px;
-        }
-        
-        .profile-photo {
-            width: 140px;
-            height: 140px;
-            border-radius: 50%;
-            margin: 0 auto 15px;
-            overflow: hidden;
-            border: 4px solid #00A878;
-        }
-        
-        .profile-photo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .name {
-            font-size: 1.5em;
-            font-weight: 700;
-            margin-bottom: 5px;
-            letter-spacing: 0.5px;
-            color: #1a202c;
-        }
-        
-        .title {
-            font-size: 0.9em;
-            color: #00A878;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-        }
-        
-        .sidebar-section {
-            margin-bottom: 25px;
-        }
-        
-        .sidebar-title {
-            font-size: 0.85em;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1.2px;
-            margin-bottom: 12px;
-            color: #00A878;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 10px;
-            font-size: 0.8em;
-            line-height: 1.4;
-            color: #4a5568;
-        }
-        
-        .contact-icon {
-            margin-right: 8px;
-            font-size: 1em;
-            width: 16px;
-            flex-shrink: 0;
-        }
-        
-        .skill-category {
-            margin-bottom: 15px;
-        }
-        
-        .skill-category-title {
-            font-size: 0.75em;
-            font-weight: 600;
-            color: #4a5568;
-            margin-bottom: 6px;
-        }
-        
-        .skill-item {
-            font-size: 0.75em;
-            color: #00A878;
-            margin-bottom: 4px;
-            padding-left: 10px;
-            position: relative;
-            font-weight: 500;
-        }
-        
-        .skill-item::before {
-            content: '•';
-            position: absolute;
-            left: 0;
-            color: #00A878;
-        }
-        
-        .cert-badge {
-            padding: 6px 10px;
-            border-radius: 4px;
-            font-size: 0.75em;
-            margin-bottom: 6px;
-            display: inline-block;
-            width: 100%;
-            color: #4a5568;
-        }
-        
-        .education-item {
-            margin-bottom: 12px;
-            font-size: 0.75em;
-        }
-        
-        .degree {
-            font-weight: 600;
-            color: #2d3748;
-            margin-bottom: 3px;
-        }
-        
-        .institution {
-            color: #4a5568;
-            font-size: 0.95em;
-        }
-        
-        .year {
-            color: #718096;
-            font-size: 0.9em;
-        }
-        
-        /* RIGHT CONTENT */
-        .main-content {
-            padding: 25px 35px;
-        }
-        
-        .section {
-            margin-bottom: 18px;
-        }
-        
-        .section-title {
-            font-size: 1.15em;
-            color: #00A878;
-            margin-bottom: 10px;
-            padding-bottom: 4px;
-            border-bottom: 2px solid #e2e8f0;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-        }
-        
-        .summary-text {
-            font-size: 0.78em;
-            line-height: 1.45;
-            color: #4a5568;
-            text-align: justify;
-        }
-        
-        .achievements-grid {
-            display: grid;
-            gap: 7px;
-        }
-        
-        .achievement-box {
-            background: #F1F5F3;
-            border-left: 4px solid #00A878;
-            padding: 9px 12px;
-            border-radius: 4px;
-        }
-        
-        .achievement-title {
-            font-weight: 600;
-            color: #00A878;
-            margin-bottom: 3px;
-            font-size: 0.8em;
-        }
-        
-        .achievement-desc {
-            color: #4a5568;
-            font-size: 0.73em;
-            line-height: 1.38;
-        }
-        
-        .experience-item {
-            margin-bottom: 16px;
-            padding-bottom: 14px;
-            border-bottom: 1px solid #e2e8f0;
-        }
-        
-        .experience-item:last-child {
-            border-bottom: none;
-        }
-        
-        .job-header {
-            margin-bottom: 7px;
-        }
-        
-        .job-title {
-            font-size: 0.98em;
-            color: #00A878;
-            font-weight: 700;
-            margin-bottom: 3px;
-        }
-        
-        .company-duration {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 5px;
-        }
-        
-        .company {
-            color: #4a5568;
-            font-size: 0.8em;
-            font-weight: 500;
-        }
-        
-        .duration {
-            color: #718096;
-            font-size: 0.73em;
-            font-weight: 500;
-        }
-        
-        .job-description {
-            color: #4a5568;
-            margin-bottom: 7px;
-            line-height: 1.45;
-            font-size: 0.78em;
-        }
-        
-        .bullet-list {
-            list-style: none;
-            margin-top: 5px;
-        }
-        
-        .bullet-item {
-            padding-left: 15px;
-            position: relative;
-            margin-bottom: 4px;
-            color: #4a5568;
-            font-size: 0.73em;
-            line-height: 1.38;
-        }
-        
-        .bullet-item::before {
-            content: '▸';
-            position: absolute;
-            left: 0;
-            color: #4a5568;
-            font-weight: bold;
-        }
-        
-        @media print {
-            body {
-                background: white;
-                padding: 0;
-                margin: 0;
-            }
-            .container {
-                box-shadow: none;
-                max-width: 100%;
-                display: grid;
-                grid-template-columns: 280px 1fr;
-                min-height: auto;
-            }
-            .sidebar {
-                background: #E8F0ED !important;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-                page-break-inside: avoid;
-                padding: 18px 16px;
-            }
-            .main-content {
-                background: white !important;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-                padding: 18px 28px;
-            }
-            .section {
-                page-break-inside: avoid;
-                margin-bottom: 12px;
-            }
-            .experience-item {
-                page-break-inside: avoid;
-                margin-bottom: 10px;
-                padding-bottom: 9px;
-            }
-            .achievement-box {
-                background: #F1F5F3 !important;
-                border-left: 4px solid #00A878 !important;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-                padding: 7px 10px;
-                margin-bottom: 5px;
-            }
-            .achievement-title {
-                font-size: 0.75em;
-                margin-bottom: 2px;
-            }
-            .achievement-desc {
-                font-size: 0.69em;
-                line-height: 1.28;
-            }
-            .profile-photo {
-                border: 4px solid #00A878 !important;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-                width: 105px;
-                height: 105px;
-            }
-            .section-title {
-                font-size: 1.05em;
-                margin-bottom: 8px;
-                padding-bottom: 3px;
-            }
-            .summary-text {
-                font-size: 0.74em;
-                line-height: 1.35;
-            }
-            .job-title {
-                font-size: 0.92em;
-            }
-            .job-description {
-                font-size: 0.72em;
-                margin-bottom: 5px;
-                line-height: 1.35;
-            }
-            .bullet-item {
-                font-size: 0.69em;
-                margin-bottom: 3px;
-                line-height: 1.3;
-                padding-left: 13px;
-            }
-            .sidebar-section {
-                margin-bottom: 14px;
-            }
-            .sidebar-title {
-                font-size: 0.78em;
-                margin-bottom: 7px;
-            }
-            .contact-item {
-                font-size: 0.72em;
-                margin-bottom: 7px;
-            }
-            .skill-item {
-                font-size: 0.68em;
-                margin-bottom: 3px;
-            }
-            .skill-category {
-                margin-bottom: 10px;
-            }
-            .skill-category-title {
-                font-size: 0.7em;
-            }
-            .name {
-                font-size: 1.4em;
-            }
-            .title {
-                font-size: 0.85em;
-            }
-        }
-        
-        @media (max-width: 900px) {
-            .container {
-                grid-template-columns: 1fr;
-            }
-            .sidebar {
-                padding: 30px 20px;
-            }
-            .main-content {
-                padding: 30px 20px;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wayne Cheah — Senior Software Engineer</title>
+<style>
+  :root{
+    --black:#0d0d0d;
+    --ink:#1c1c1c;
+    --body:#4a4a4a;
+    --muted:#6f6f6f;
+    --rule:#1c1c1c;
+    --hair:#c9c9c9;
+    --paper:#ffffff;
+    --sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+
+  body{
+    font-family:var(--sans);
+    background:#d7d7d7;
+    color:var(--body);
+    font-size:14px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    padding:28px 14px;
+  }
+  .sheet{
+    position:relative;
+    max-width:1080px;margin:0 auto;
+    background:var(--paper);
+    padding:52px 58px 56px;
+    box-shadow:0 2px 6px rgba(0,0,0,.12),0 18px 50px rgba(0,0,0,.14);
+  }
+  /* black edge bar, top-left */
+  .bar{
+    position:absolute;
+    left:0;top:64px;
+    width:26px;height:190px;
+    background:var(--black);
+  }
+
+  /* ================= MASTHEAD ================= */
+  .top{
+    display:-webkit-flex;display:flex;
+    -webkit-justify-content:space-between;justify-content:space-between;
+    -webkit-align-items:flex-start;align-items:flex-start;
+    margin-bottom:34px;
+  }
+  .nameblock{padding-top:4px}
+  .n1{
+    font-size:38px;font-weight:300;letter-spacing:2.5px;
+    text-transform:uppercase;color:var(--ink);line-height:1.05;
+  }
+  .n2{
+    font-size:41px;font-weight:800;letter-spacing:.6px;
+    text-transform:uppercase;color:var(--black);line-height:1.05;
+    margin-top:1px;
+  }
+  .n3{
+    margin-top:12px;
+    font-size:14px;font-weight:400;letter-spacing:8px;
+    text-transform:uppercase;color:var(--ink);
+  }
+
+  .contact{
+    -webkit-flex:0 0 330px;flex:0 0 330px;
+    padding-top:6px;
+  }
+  .crow{
+    display:-webkit-flex;display:flex;
+    -webkit-align-items:center;align-items:center;
+    border-bottom:1px solid var(--black);
+    padding:5px 0 5px;
+  }
+  .crow:last-child{border-bottom:none}
+  .cico{
+    -webkit-flex:0 0 44px;flex:0 0 44px;
+    font-size:16px;font-weight:400;color:var(--black);
+    text-align:left;line-height:1;
+  }
+  .cico svg{width:14px;height:16px;display:inline-block;vertical-align:-3px}
+  .ctxt{font-size:13.5px;color:var(--ink);line-height:1.5;word-break:break-word}
+  .ctxt a{color:var(--ink);text-decoration:none}
+  .ctxt a:hover{text-decoration:underline}
+
+  /* ================= SPLIT ================= */
+  .cols{
+    display:-webkit-flex;display:flex;
+    -webkit-align-items:flex-start;align-items:flex-start;
+  }
+  .left{-webkit-flex:1 1 auto;flex:1 1 auto;min-width:0;padding-right:44px}
+  .right{-webkit-flex:0 0 268px;flex:0 0 268px;width:268px}
+
+  /* ================= HEADINGS ================= */
+  .sec{
+    font-size:17px;font-weight:800;letter-spacing:2.6px;
+    text-transform:uppercase;color:var(--black);
+    margin-bottom:14px;
+  }
+  .sec.ruled{
+    padding-bottom:9px;
+    border-bottom:1.5px solid var(--rule);
+    max-width:75%;
+  }
+  /* heading with rule running to the right of the words */
+  .sec.inline{
+    display:-webkit-flex;display:flex;
+    -webkit-align-items:center;align-items:center;
+  }
+  .sec.inline .ln{
+    -webkit-flex:1 1 auto;flex:1 1 auto;
+    height:1.5px;background:var(--rule);
+    margin-left:14px;
+  }
+
+  .group{margin-bottom:30px}
+  .group:last-child{margin-bottom:0}
+
+  /* ================= SUMMARY ================= */
+  .summary{
+    border-left:1.5px solid var(--black);
+    padding-left:18px;
+    font-size:13.5px;line-height:1.75;color:var(--body);
+  }
+  .summary strong{color:var(--ink);font-weight:650}
+
+  /* ================= JOBS ================= */
+  .job{margin-bottom:24px;break-inside:avoid}
+  .job:last-child{margin-bottom:0}
+  .jrole{
+    font-size:14.5px;font-weight:750;letter-spacing:.4px;
+    text-transform:uppercase;color:var(--black);line-height:1.35;
+  }
+  .jmeta{
+    font-size:13.5px;font-weight:650;color:var(--ink);
+    margin-top:2px;margin-bottom:9px;
+  }
+  ul.pts{list-style:none}
+  ul.pts li{
+    position:relative;padding-left:16px;
+    font-size:13px;line-height:1.62;color:var(--body);
+    margin-bottom:5px;
+  }
+  ul.pts li::before{
+    content:"•";position:absolute;left:2px;top:-1px;
+    color:var(--muted);font-size:14px;
+  }
+  ul.pts li:last-child{margin-bottom:0}
+  ul.pts li b{font-weight:700;color:var(--ink)}
+
+  .subhead{
+    font-size:11px;font-weight:750;letter-spacing:1.4px;
+    text-transform:uppercase;color:var(--muted);
+    margin:12px 0 6px;
+  }
+  .subhead:first-of-type{margin-top:0}
+
+  .toolline{
+    margin-top:9px;font-size:12px;line-height:1.6;color:var(--muted);
+  }
+  .toolline b{color:var(--ink);font-weight:700}
+
+  /* ================= PROJECTS ================= */
+  .proj{font-size:13px;line-height:1.7;color:var(--body);margin-bottom:5px}
+  .proj:last-child{margin-bottom:0}
+  .proj b{color:var(--black);font-weight:750}
+  .proj a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--hair)}
+  .proj a:hover{border-bottom-color:var(--black)}
+
+  /* ================= RIGHT COLUMN ================= */
+  .photo{
+    width:100%;height:300px;
+    background:#efefef;
+    overflow:hidden;position:relative;
+    margin-bottom:32px;
+  }
+  .photo img{
+    display:block;width:100%;height:100%;
+    object-fit:cover;object-position:center top;
+    position:relative;z-index:1;
+  }
+  .photo .ph{
+    position:absolute;top:50%;left:0;right:0;
+    -webkit-transform:translateY(-50%);transform:translateY(-50%);
+    text-align:center;font-size:10px;letter-spacing:3px;
+    text-transform:uppercase;color:#a5a5a5;
+  }
+
+  .rec{margin-bottom:14px}
+  .rec:last-child{margin-bottom:0}
+  .rec .t{font-size:13.5px;font-weight:700;color:var(--ink);line-height:1.4}
+  .rec .o{font-size:13px;color:var(--body);line-height:1.5}
+  .rec .d{font-size:12.5px;color:var(--muted);font-style:italic}
+
+  .skgrp{margin-bottom:16px}
+  .skgrp:last-child{margin-bottom:0}
+  .skgrp h4{
+    font-size:13.5px;font-weight:700;color:var(--ink);margin-bottom:6px;
+  }
+  ul.dot{list-style:none}
+  ul.dot li{
+    position:relative;padding-left:15px;
+    font-size:13px;line-height:1.62;color:var(--body);
+    margin-bottom:3px;
+  }
+  ul.dot li::before{
+    content:"•";position:absolute;left:2px;top:-1px;color:var(--muted);
+  }
+  ul.dot li:last-child{margin-bottom:0}
+
+  /* ================= RESPONSIVE ================= */
+  @media (max-width:800px){
+    body{padding:0;background:#fff}
+    .sheet{padding:34px 22px 34px;box-shadow:none}
+    .bar{top:0;height:120px;width:14px}
+    .top{-webkit-flex-direction:column;flex-direction:column}
+    .contact{-webkit-flex:1 1 auto;flex:1 1 auto;width:100%;margin-top:22px;padding-top:0}
+    .n1{font-size:28px}
+    .n2{font-size:31px}
+    .n3{font-size:12px;letter-spacing:5px}
+    .cols{-webkit-flex-direction:column;flex-direction:column}
+    .left{padding-right:0}
+    .right{-webkit-flex:1 1 auto;flex:1 1 auto;width:100%;margin-top:32px}
+    .photo{height:260px}
+    .sec.ruled{max-width:100%}
+  }
+
+  /* ================= PRINT ================= */
+  @page{size:A4;margin:11mm 12mm}
+  @media print{
+    body{background:#fff;padding:0;font-size:9.3pt}
+    .sheet{box-shadow:none;padding:0;max-width:none}
+    *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .bar{top:8px;height:150px;width:18px;left:-18px}
+    .job{break-inside:avoid}
+    .group{margin-bottom:20px}
+    .job{margin-bottom:16px}
+    ul.pts li{margin-bottom:2px;line-height:1.48}
+    .photo{height:212px;margin-bottom:18px}
+    .skgrp{margin-bottom:11px}
+    ul.dot li{margin-bottom:1px;line-height:1.5;font-size:8.6pt}
+    .skgrp h4{margin-bottom:4px;font-size:9pt}
+    .rec{margin-bottom:10px}
+    .sec{margin-bottom:10px;font-size:13pt}
+    .n1{font-size:26pt}
+    .n2{font-size:28pt}
+  }
+</style>
 </head>
 <body>
-    <div class="container">
-        <!-- LEFT SIDEBAR -->
-        <aside class="sidebar">
-            <div class="profile-section">
-                <div class="profile-photo">
-                    <img src="profile.png" alt="Wayne Cheah">
-                </div>
-                <h1 class="name">Wayne Cheah</h1>
-                <p class="title">Technical Lead</p>
-            </div>
-            
-            <div class="sidebar-section">
-                <h3 class="sidebar-title">Contact</h3>
-                <div class="contact-item">
-                    <span class="contact-icon">📍</span>
-                    <span>Puchong, Selangor, Malaysia</span>
-                </div>
-                <div class="contact-item">
-                    <span class="contact-icon">📞</span>
-                    <span>012-651 8551</span>
-                </div>
-                <div class="contact-item">
-                    <span class="contact-icon">✉</span>
-                    <span>cheah@kokweng.net<br />cheahkokweng@gmail.com</span>
-                </div>
-                <div class="contact-item">
-                    <span class="contact-icon">💼</span>
-                    <span>Remote Work Specialist (4+ years)</span>
-                </div>
-            </div>
-            
-            <div class="sidebar-section">
-                <h3 class="sidebar-title">Technical Skills</h3>
-                
-                <div class="skill-category">
-                    <div class="skill-category-title">Backend</div>
-                    <div class="skill-item">Node.js, Bun, Go</div>
-                    <div class="skill-item">Express, Hono, Nest.js</div>
-                    <div class="skill-item">GraphQL, REST APIs, tRPC</div>
-                    <div class="skill-item">Microservices, Saga, CQRS</div>
-                </div>
-                
-                <div class="skill-category">
-                    <div class="skill-category-title">Frontend</div>
-                    <div class="skill-item">React, Vue 3, Angular</div>
-                    <div class="skill-item">SolidJS, Svelte, TypeScript</div>
-                    <div class="skill-item">RxJS, Signal, State Management</div>
-                </div>
-                
-                <div class="skill-category">
-                    <div class="skill-category-title">Cloud & DevOps</div>
-                    <div class="skill-item">AWS, GCP, Azure DevOps</div>
-                    <div class="skill-item">Docker, Kubernetes</div>
-                    <div class="skill-item">Helm, ArgoCD, CI/CD</div>
-                </div>
-                
-                <div class="skill-category">
-                    <div class="skill-category-title">Database</div>
-                    <div class="skill-item">MongoDB, Postgresql, MySQL, Redis</div>
-                    <div class="skill-item">Mongoose, Prisma, Drizzle ORM</div>
-                    <div class="skill-item">RAG, Pinecone, Qdrant, Weaviate, pgvector</div>
-                </div>
-                
-                <div class="skill-category">
-                    <div class="skill-category-title">Architecture</div>
-                    <div class="skill-item">Event-Driven Design</div>
-                    <div class="skill-item">Clean Architecture</div>
-                    <div class="skill-item">Saga Pattern, API Gateway</div>
-                </div>
-                
-                <div class="skill-category">
-                    <div class="skill-category-title">Other</div>
-                    <div class="skill-item">NATS, Apache Kafka</div>
-                    <div class="skill-item">Grafana, Prometheus</div>
-                    <div class="skill-item">Jest, E2E Testing</div>
-                    <div class="skill-item">Linux Administration</div>
-                    <div class="skill-item">Claude Code, Codex, Gemini Pro</div>
-                    <div class="skill-item">Openclaw, Hermes Agents</div>
-                    <div class="skill-item">Context & Harness Engineering</div>
-                </div>
-            </div>
-            
-            <div class="sidebar-section">
-                <h3 class="sidebar-title">Certifications</h3>
-                <div class="cert-badge">✓ MongoDB Certified Developer</div>
-            </div>
-            
-            <div class="sidebar-section">
-                <h3 class="sidebar-title">Education</h3>
-                <div class="education-item">
-                    <div class="degree">Diploma in Computing IT</div>
-                    <div class="institution">APIIT College</div>
-                    <div class="year">2001</div>
-                </div>
-                <div class="education-item">
-                    <div class="degree">Certificate in Computer Science</div>
-                    <div class="institution">Institute Astin</div>
-                    <div class="year">1998</div>
-                </div>
-            </div>
-            
-            <div class="sidebar-section">
-                <h3 class="sidebar-title">Languages</h3>
-                <div class="education-item">
-                  <div class="institution">English, Mandarin, Cantonese, Malay (Spoken)</div>
-                  <div class="institution">English, Chinese (Written)</div>
-                </div>
-            </div>
-            
-            <div class="sidebar-section">
-                <h3 class="sidebar-title">Portfolio</h3>
-                <div class="skill-category-title">Project Documentations</div>
-                <a href="https://docs.kokweng.net/" target="_blank" class="skill-item">https://docs.kokweng.net/</a>
-                <a href="https://plans.kokweng.net/" target="_blank" class="skill-item">https://plans.kokweng.net/</a>
-            </div>
-        </aside>
-        
-        <!-- RIGHT CONTENT -->
-        <main class="main-content">
-            <section class="section">
-                <h2 class="section-title">Professional Summary</h2>
-                <p class="summary-text">
-                  Solutions Architect with 20+ years of proven expertise in full-stack development, microservices architecture, and cloud-native solutions.
-                  Specialized in architecting and executing large-scale legacy system migrations and SaaS platform delivery, achieving significant performance improvements through modern technology stacks.
-                  Deep technical expertise across backend frameworks (Node.js, Nest.js, Hono), frontend technologies (Angular, React, Vue), and cloud platforms (GCP, AWS, Azure).
-                  Successfully delivered enterprise SaaS solutions for major brands including Starbucks, MrDIY, AirAsia, FamilyMart, Maxis, and TGV.
-                  Strong focus on distributed systems, event-driven architecture, performance optimization, and building scalable engineering teams.
-                </p>
-            </section>
+<div class="sheet">
+  <div class="bar"></div>
 
-            <section class="section">
-                <h2 class="section-title">Key Achievements</h2>
-                <div class="achievements-grid">
-                    <div class="achievement-box">
-                        <div class="achievement-title">Legacy System Modernization</div>
-                        <div class="achievement-desc">Migrated two legacy PHP monolithic systems to modern Node.js microservices architecture (50%+ faster APIs), transformed MySQL to MongoDB with event-driven design using NATS, achieving 30-50% faster queries and improved system scalability</div>
-                    </div>
-                    <div class="achievement-box">
-                        <div class="achievement-title">High-Scale Platform Engineering</div>
-                        <div class="achievement-desc">Leading B2B platform serving 1,000+ daily active users, processing 300+ transactions daily with RM 1 million+ daily transaction value, with 50%+ increase in user adoption post-modernization</div>
-                    </div>
-                    <div class="achievement-box">
-                        <div class="achievement-title">DevOps Excellence</div>
-                        <div class="achievement-desc">Implemented CI/CD automation achieving ~30% deployment time reduction, established Docker/Kubernetes infrastructure across AWS, GCP, and Azure with comprehensive monitoring using Grafana and Prometheus</div>
-                    </div>
-                    <div class="achievement-box">
-                        <div class="achievement-title">Enterprise SaaS Solutions Delivery</div>
-                        <div class="achievement-desc">Delivered SaaS field force management solutions for premium brands (Starbucks, MrDIY, MyNews, FamilyMart, TGV, Poh Kong), improving operational efficiency through real-time performance tracking systems</div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="section">
-                <h2 class="section-title">Work Experience</h2>
-                
-                <div class="experience-item">
-                    <div class="job-header">
-                        <div class="job-title">Technical Lead</div>
-                        <div class="company-duration">
-                            <span class="company">Lapasar Sdn Bhd | Bukit Raja, Selangor</span>
-                            <span class="duration">Nov 2021 - Present</span>
-                        </div>
-                    </div>
-                    <p class="job-description">
-                        Leading architecture and full-stack development for enterprise B2B eCommerce platform, managing team of 12 engineers across backend, frontend, and operations. Responsible for microservices architecture design, cloud deployment strategy, and CI/CD automation.
-                    </p>
-                    <ul class="bullet-list">
-                        <li class="bullet-item">Architected and executed complete migration of two legacy PHP (CodeIgniter) systems to modern Node.js microservices using Nest.js and Hono frameworks</li>
-                        <li class="bullet-item">Transformed MySQL monolithic architecture to MongoDB-based event-driven system with NATS message queue, achieving 50%+ API performance improvement and 30-50% faster queries</li>
-                        <li class="bullet-item">Rebuilt frontend architecture from MVC to decoupled design using Vue 3 and React.js with Redis caching for high-demand data</li>
-                        <li class="bullet-item">Managing platform serving 1,000+ daily active users with 300+ daily transactions worth RM 1M+ in transaction value</li>
-                        <li class="bullet-item">Established multi-cloud deployment pipeline across AWS, GCP, and Azure DevOps with Docker containerization and Cloud Run</li>
-                        <li class="bullet-item">Implemented comprehensive API documentation using Swagger and GraphQL schemas with Drizzle ORM for database management</li>
-                    </ul>
-                </div>
-
-                <div class="experience-item">
-                    <div class="job-header">
-                        <div class="job-title">Senior Web Developer</div>
-                        <div class="company-duration">
-                            <span class="company">SofaX Sdn Bhd | Bandar Sunway, Selangor</span>
-                            <span class="duration">Apr 2021 - Oct 2021</span>
-                        </div>
-                    </div>
-                    <p class="job-description">
-                        Full-stack development for innovative VR/eCommerce application with focus on backend architecture using Nest.js and event-driven microservices design.
-                    </p>
-                    <ul class="bullet-list">
-                        <li class="bullet-item">Successfully integrated Stripe payment gateway into pioneering VR shopping experience platform, one of few in Malaysian market</li>
-                        <li class="bullet-item">Developed event-driven microservices with REST APIs and NoSQL database schema design</li>
-                        <li class="bullet-item">Deployed infrastructure on AliCloud using Docker, Kubernetes, Helm Charts, and established GitOps workflow with Argo CD</li>
-                    </ul>
-                </div>
-
-                <div class="experience-item">
-                    <div class="job-header">
-                        <div class="job-title">Technical Lead</div>
-                        <div class="company-duration">
-                            <span class="company">Symple Apps Sdn Bhd | Setiawalk Puchong, Selangor</span>
-                            <span class="duration">Apr 2017 - Mar 2021</span>
-                        </div>
-                    </div>
-                    <p class="job-description">
-                        Led technical architecture and development of a multi-tenant SaaS field force management platform serving major retail and F&B chains. Managed team of 5 programmers and 2 designers, providing technical training and mentorship.
-                    </p>
-                    <ul class="bullet-list">
-                        <li class="bullet-item">Architected and delivered Symple Field Force Management SaaS platform for premium clients: Starbucks, MrDIY, MyNews, FamilyMart, TGV, Poh Kong, Good Morning, Atoz Computer, Segi Fresh, Teo Seng Capital, and Titanoil</li>
-                        <li class="bullet-item">Improved operational efficiency through real-time tracking of sales and operations performance across distributed field workers</li>
-                        <li class="bullet-item">Built scalable multi-tenant microservices using GraphQL APIs with Angular frontend, deployed on GCP Kubernetes</li>
-                        <li class="bullet-item">Implemented comprehensive CI/CD pipeline with performance optimization, load balancing, and database replication strategies</li>
-                        <li class="bullet-item">Provided technical training on full-stack SaaS technologies and best practices to development team</li>
-                    </ul>
-                </div>
-
-                <div class="experience-item">
-                    <div class="job-header">
-                        <div class="job-title">Technical Lead</div>
-                        <div class="company-duration">
-                            <span class="company">Incredible QR | Bandar Puteri, Selangor</span>
-                            <span class="duration">Feb 2015 - Mar 2017</span>
-                        </div>
-                    </div>
-                    <p class="job-description">
-                        Led team of 5 programmers and 2 designers in developing a SaaS mobile platform backend and client applications. Managed full SDLC including architecture design, microservices implementation, and Linux server administration.
-                    </p>
-                    <ul class="bullet-list">
-                        <li class="bullet-item">Architected a SaaS Mobile Backend as a Service (MBaaS) platform enabling multiple client applications to leverage shared scalable backend infrastructure</li>
-                        <li class="bullet-item">Delivered Defect Tracker Management system for major property developers (ECO-World, Matrix Concept, Symphony)</li>
-                        <li class="bullet-item">Built innovative iBeacon-based promotion system for AirAsia Cafe and Redbox Courier Service</li>
-                        <li class="bullet-item">Created Sales Tracker SaaS applications for Maxis and Mah Sing Group, plus CRM system for FELDA</li>
-                        <li class="bullet-item">Developed multiple cross-platform mobile applications for clients including Bagman, CityChain, Fiavest, and KL Sogo</li>
-                        <li class="bullet-item">Configured VPS Linux servers with Nginx, Node.js, SSL, HTTP/2, implementing security hardening and load balancing</li>
-                    </ul>
-                </div>
-
-                <div class="experience-item">
-                    <div class="job-header">
-                        <div class="job-title">Web/Mobile Application Developer</div>
-                        <div class="company-duration">
-                            <span class="company">Msoft Technologies | Mont Kiara, Kuala Lumpur</span>
-                            <span class="duration">Apr 2013 - Jan 2015</span>
-                        </div>
-                    </div>
-                    <ul class="bullet-list">
-                        <li class="bullet-item">Developed Mobile Home Security & Automation System for Innerzon</li>
-                        <li class="bullet-item">Built Scholarship Management System (Yayasan) and Forex Management System (Quantum Trading)</li>
-                        <li class="bullet-item">Implemented streamlined deployment workflow reducing production release complexity</li>
-                    </ul>
-                </div>
-
-                <div class="experience-item">
-                    <div class="job-header">
-                        <div class="job-title">Senior PHP Programmer</div>
-                        <div class="company-duration">
-                            <span class="company">THN Technology System | I-City, Selangor</span>
-                            <span class="duration">Oct 2009 - Mar 2013</span>
-                        </div>
-                    </div>
-                    <ul class="bullet-list">
-                        <li class="bullet-item">Developed comprehensive MLM & Bonus System for Health Way and Agape Superior Living</li>
-                        <li class="bullet-item">Built Hotel Management System for Tang Dynasty Hotel</li>
-                        <li class="bullet-item">Designed database structures and configured web servers with performance tuning</li>
-                    </ul>
-                </div>
-
-                <div class="experience-item">
-                    <div class="job-header">
-                        <div class="job-title">Senior Web Programmer → PHP Programmer → Web Developer</div>
-                        <div class="company-duration">
-                            <span class="company">iPower Host / Asia Pacific Net / World Net Visions</span>
-                            <span class="duration">Jul 2001 - Sep 2009</span>
-                        </div>
-                    </div>
-                    <p class="job-description">
-                        Progressive roles across multiple companies delivering web applications, eCommerce platforms, and enterprise systems.
-                    </p>
-                    <ul class="bullet-list">
-                        <li class="bullet-item">Developed dating website, social networking application, eBay templating system, and affiliate platforms</li>
-                        <li class="bullet-item">Built eCommerce shopping carts with POS integration, online reservation systems, and CMS platforms</li>
-                        <li class="bullet-item">Created ICOM Student Management system, Asian Yellow Page directory, and V-Shop Online Mall</li>
-                        <li class="bullet-item">Developed internal portals with leave management, attendance tracking, and e-payslip systems</li>
-                    </ul>
-                </div>
-            </section>
-
-            <section class="section">
-                <h2 class="section-title">Professional Development</h2>
-                <ul class="bullet-list">
-                    <li class="bullet-item">Google Cloud: Cloud Onboard</li>
-                    <li class="bullet-item">AWSome Day - Amazon Web Services</li>
-                    <li class="bullet-item">MongoDB University: M101P, M101JS & M102</li>
-                    <li class="bullet-item">MSC Open Source Conference: "Open to Change"</li>
-                    <li class="bullet-item">Facebook Apps Development Conference</li>
-                </ul>
-            </section>
-        </main>
+  <!-- ================= MASTHEAD ================= -->
+  <div class="top">
+    <div class="nameblock">
+      <div class="n1">Wayne</div>
+      <div class="n2">Cheah</div>
+      <div class="n3">Senior Software Engineer</div>
     </div>
+
+    <div class="contact">
+      <div class="crow">
+        <div class="cico">M</div>
+        <div class="ctxt">012-651 8551</div>
+      </div>
+      <div class="crow">
+        <div class="cico">@</div>
+        <div class="ctxt"><a href="mailto:cheahkokweng@gmail.com">cheahkokweng@gmail.com</a></div>
+      </div>
+      <div class="crow">
+        <div class="cico">G</div>
+        <div class="ctxt"><a href="https://github.com/waynecheah">github.com/waynecheah</a></div>
+      </div>
+      <div class="crow">
+        <div class="cico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-6.2 8-12a8 8 0 1 0-16 0c0 5.8 8 12 8 12z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div class="ctxt">Puchong, Selangor, Malaysia</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= TWO COLUMNS ================= -->
+  <div class="cols">
+
+    <!-- ---------- LEFT ---------- -->
+    <div class="left">
+
+      <div class="group">
+        <div class="sec">Summary</div>
+        <p class="summary">
+          Backend engineer who takes ageing systems and makes them fast, observable and cheap to run.
+          Specialised in <strong>legacy modernisation</strong>, <strong>event-driven architecture</strong>
+          and <strong>high-throughput platform design</strong>, with platforms carrying over RM 1 million
+          in daily transactions. Works as the engineer writing the code and reviewing the design.
+          Open to Senior or Staff Engineer roles with real technical depth and ownership.
+        </p>
+      </div>
+
+      <div class="group">
+        <div class="sec ruled">Work Experience</div>
+
+        <!-- Lapasar -->
+        <div class="job">
+          <div class="jrole">Senior Software Engineer / Technical Lead</div>
+          <div class="jmeta">Lapasar Sdn Bhd | Nov 2021 – Jun 2026</div>
+          <ul class="pts">
+            <li>Migrated two legacy PHP (CodeIgniter) monoliths to Node.js microservices on Nest.js and Hono, delivering <b>50%+ faster APIs</b>.</li>
+            <li>Redesigned the MySQL data model to MongoDB on a NATS event backbone; queries returned <b>30–50% faster</b>.</li>
+            <li>Owned architecture for a B2B commerce platform carrying <b>1,000+ daily active users</b> and <b>RM 1M+ in daily transactions</b>.</li>
+            <li>Built the multi-cloud deployment pipeline across AWS, GCP and Azure DevOps using Docker and Cloud Run.</li>
+            <li>Rebuilt the frontend from MVC into a decoupled Vue 3 and React setup with Redis caching on hot paths.</li>
+            <li>Stood up observability on Prometheus and Grafana, plus Swagger and GraphQL schema documentation.</li>
+            <li>Mentored 3–4 engineers on service boundaries and event-driven patterns; ran standups and architecture reviews.</li>
+          </ul>
+        </div>
+
+        <!-- SofaX -->
+        <div class="job">
+          <div class="jrole">Senior Web Developer</div>
+          <div class="jmeta">SofaX Sdn Bhd | Apr 2021 – Oct 2021</div>
+          <ul class="pts">
+            <li>Built the backend for a VR commerce application on Nest.js using event-driven microservices.</li>
+            <li>Integrated Stripe payments into one of the first VR shopping experiences in the Malaysian market.</li>
+            <li>Deployed to AliCloud with Docker, Kubernetes and Helm, and established a GitOps workflow on Argo CD.</li>
+          </ul>
+        </div>
+
+        <!-- Symple -->
+        <div class="job">
+          <div class="jrole">Senior Software Engineer / Technical Lead</div>
+          <div class="jmeta">Symple Apps Sdn Bhd | Apr 2017 – Mar 2021</div>
+          <ul class="pts">
+            <li>Designed and built a multi-tenant field force SaaS used by <b>Starbucks, MrDIY, MyNews, FamilyMart, TGV and Poh Kong</b>.</li>
+            <li>Built the platform on GraphQL APIs with an Angular frontend, running on GCP Kubernetes.</li>
+            <li>Delivered real-time sales and operations tracking across large distributed field teams.</li>
+            <li>Implemented CI/CD with load balancing and database replication for tenant isolation and uptime.</li>
+            <li>Guided 3 engineers and 2 designers on multi-tenant architecture, and ran internal training on the SaaS toolchain.</li>
+          </ul>
+        </div>
+
+        <!-- Incredible QR -->
+        <div class="job">
+          <div class="jrole">Senior Software Engineer / Technical Lead</div>
+          <div class="jmeta">Incredible QR | Feb 2015 – Mar 2017</div>
+          <ul class="pts">
+            <li>Architected a Mobile Backend-as-a-Service platform so multiple client apps could share one scalable backend.</li>
+            <li>Delivered a defect tracker used by property developers including EcoWorld, Matrix Concept and Symphony.</li>
+            <li>Built an iBeacon promotion system for AirAsia Cafe and Redbox Courier Service.</li>
+            <li>Shipped sales tracking SaaS for Maxis and Mah Sing, and a CRM for FELDA.</li>
+            <li>Ran the Linux and VPS layer — Nginx, SSL, HTTP/2, security hardening and load balancing.</li>
+            <li>Guided 5 engineers and 2 designers through the full SDLC on backend and cross-platform mobile work.</li>
+          </ul>
+        </div>
+
+        <!-- Earlier -->
+        <div class="job">
+          <div class="jrole">Senior PHP Developer &rarr; Web Developer</div>
+          <div class="jmeta">Msoft Technologies · THN Technology · iPower Host · Asia Pacific Net · World Net Visions</div>
+          <ul class="pts">
+            <li>Progressed from web developer to senior programmer across e-commerce storefronts with POS integration, hotel and student management systems, MLM and bonus engines, and forex and scholarship platforms.</li>
+            <li>Built mobile home security and automation, plus internal HR portals for leave, attendance and e-payslip.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="group">
+        <div class="sec">Portfolio</div>
+        <div class="proj"><b>Technical documentation:</b> architecture and system write-ups. <a href="https://docs.kokweng.net/">docs.kokweng.net</a></div>
+        <div class="proj"><b>Architecture notes:</b> design decisions and platform planning. <a href="https://plans.kokweng.net/">plans.kokweng.net</a></div>
+      </div>
+
+    </div>
+
+    <!-- ---------- RIGHT ---------- -->
+    <div class="right">
+
+      <!-- Profile photo — change src to swap it -->
+      <div class="photo">
+        <span class="ph">Photo</span>
+        <img src="profile2.png" alt="Wayne Cheah">
+      </div>
+
+      <div class="group">
+        <div class="sec inline">Education<span class="ln"></span></div>
+        <div class="rec">
+          <div class="t">Diploma in Computing IT</div>
+          <div class="o">APIIT College</div>
+        </div>
+        <div class="rec">
+          <div class="t">Certificate in Computer Science</div>
+          <div class="o">Institute Astin</div>
+        </div>
+      </div>
+
+      <div class="group">
+        <div class="sec inline">Skills<span class="ln"></span></div>
+
+        <div class="skgrp">
+          <h4>Backend</h4>
+          <ul class="dot">
+            <li>Node.js, Nest.js, Hono, Bun, Go</li>
+            <li>GraphQL, REST, tRPC</li>
+            <li>Microservices, CQRS, Saga</li>
+          </ul>
+        </div>
+
+        <div class="skgrp">
+          <h4>Data</h4>
+          <ul class="dot">
+            <li>MongoDB, PostgreSQL, MySQL, Redis</li>
+            <li>Prisma, Drizzle, Mongoose, pgvector</li>
+            <li>Query and index tuning</li>
+          </ul>
+        </div>
+
+        <div class="skgrp">
+          <h4>Cloud &amp; Infrastructure</h4>
+          <ul class="dot">
+            <li>Docker, Kubernetes, Helm, ArgoCD</li>
+            <li>AWS, GCP, Azure, AliCloud</li>
+            <li>CI/CD, Prometheus, Grafana</li>
+          </ul>
+        </div>
+
+        <div class="skgrp">
+          <h4>Architecture</h4>
+          <ul class="dot">
+            <li>Event-driven design (NATS, Kafka)</li>
+            <li>Hexagonal and clean architecture</li>
+            <li>API gateway patterns</li>
+          </ul>
+        </div>
+
+        <div class="skgrp">
+          <h4>AI Engineering</h4>
+          <ul class="dot">
+            <li>Claude Code, Codex, Gemini Pro</li>
+            <li>Openclaw, Hermes Agents</li>
+            <li>Context, Graph &amp; Harness engineering</li>
+            <li>RAG pipelines</li>
+          </ul>
+        </div>
+
+        <div class="skgrp">
+          <h4>Frontend</h4>
+          <ul class="dot">
+            <li>React, Vue 3, Angular, SolidJS</li>
+            <li>TypeScript, RxJS</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="group">
+        <div class="sec inline">Certifications<span class="ln"></span></div>
+        <ul class="dot">
+          <li>MongoDB Certified Developer</li>
+          <li>MongoDB University — M101P, M101JS, M102</li>
+          <li>Google Cloud Onboard</li>
+          <li>AWSome Day — Amazon Web Services</li>
+        </ul>
+      </div>
+
+      <div class="group">
+        <div class="sec inline">Languages<span class="ln"></span></div>
+        <ul class="dot">
+          <li>English: Professional</li>
+          <li>Mandarin: Fluent, spoken &amp; written</li>
+          <li>Cantonese: Fluent, spoken</li>
+          <li>Malay: Conversational</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</div>
 </body>
 </html>
